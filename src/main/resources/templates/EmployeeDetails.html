@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div align="right"><a href="/"><button type="submit">LogOut</button></a></div>
+<div align="center">
+<h1>From Employee Details</h1>
+     <table border="1" cellpadding="10">
+       <thead>
+         <tr>
+           <th>EmpId</th>
+           <th>UserName</th>
+           <th>FullName</th>
+           <th>Address</th>
+           <th>PhoneNo.</th>
+           <th>Email</th>
+           <th>Salary</th>
+           <th>Actions</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr th:each="table:${emp}">
+            <td th:text="${table.empid}"></td>
+            <td th:text="${table.username}"></td>
+            <td th:text="${table.fullname}"></td>
+            <td th:text="${table.address}"></td>
+            <td th:text="${table.phoneno}"></td>
+            <td th:text="${table.email}"></td>
+            <td th:text="${table.salary}"></td>
+            <td>
+               <a th:href="@{'/edit/' + ${table.empid}}">Edit</a>
+           </td>
+        </tr>
+      </tbody>
+    </table>
+    <div align="center"><a href="/"><button type="submit">Back</button></a></div>
+  </div>
+</body>
+</html>

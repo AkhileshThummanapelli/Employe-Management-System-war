@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div align="center">
+ <h1>Access to Admin</h1>
+   <a th:href="@{'/newUser'}">Insert New User Details</a><br><br>
+     <table border="1" cellpadding="10">
+       <thead>
+         <tr>
+           <th>UserName</th>
+           <th>Password</th>
+           <th>Actions</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr th:each="table:${u}">
+            <td th:text="${table.username}"></td>
+            <td th:text="${table.password}"></td>
+            <td>
+               <a th:href="@{'/edit/' + ${table.username}}">Edit</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+               <a th:href="@{'/delete/' + ${table.username}}">Delete</a>
+           </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>
