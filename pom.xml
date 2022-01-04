@@ -10,7 +10,8 @@
 	</parent>
 	<groupId>com</groupId>
 	<artifactId>EmpManageSystem</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
+	<packaging>war</packaging>
 	<name>EmpManageSystem</name>
 	<description>ExampleApp project for Spring Boot</description>
 	<properties>
